@@ -19,5 +19,5 @@ def create(anime: schema.Anime_List_Base, db: Session = Depends(db.get_db)):
     }
 @app.get("/")
 def get(id: int, db: Session = Depends(db.get_db)):
-    db.query(models.Anime_List).filter(models.Anime_List.id == id).first()
+    return db.query(models.Anime_List)
     
