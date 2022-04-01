@@ -5,7 +5,6 @@ import models, schema
 def get_anime_list(db: Session, id: int):
     return db.query(models.Anime_List).all()
 
-#def get_anime(db:Session, )
 
 def create_anime_list(db: Session, animeList: schema.Anime_List_Create):
     db_anime_list = models.Anime_List(name=animeList.name, isDubbed=False)

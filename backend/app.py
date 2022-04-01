@@ -1,6 +1,6 @@
 
 from fastapi import FastAPI, Depends
-from .db import schema, models, db
+from db import schema, models, db
 from sqlalchemy.orm import Session
 
 app = FastAPI()
@@ -18,6 +18,6 @@ def create(anime: schema.Anime_List_Base, db: Session = Depends(db.get_db)):
         "created_id": creating.id
     }
 @app.get("/")
-def get(id: int, db: Session = Depends(db.get_db)):
+async def get(id: int, db: Session = Depends(db.get_db)):
     return db.query(models.Anime_List)
     

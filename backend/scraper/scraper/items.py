@@ -6,7 +6,8 @@
 import scrapy
 
 
-class ScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+class AnimeItem(scrapy.Item):
+    title = scrapy.Field()
+    id = scrapy.Field()
+    edition = scrapy.Field()
     pass
