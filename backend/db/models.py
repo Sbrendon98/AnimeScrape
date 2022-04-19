@@ -1,3 +1,4 @@
+from operator import index
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 from .db import Base
@@ -10,6 +11,7 @@ class Anime_List(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True, nullable=False)
+    edition = Column(Integer, index=True)
 #nullable is to make sure that the data being passed to the name Column cannot be null
     isDubbed = Column(Boolean, default=False)
     
@@ -18,7 +20,7 @@ class Anime_List(Base):
 class Anime(Base):
     __tablename__="anime"
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, unique=True, index=True)
+    name = Column(String, index=True)
     episodes = Column(Integer, index=True)
     upcoming = Column(String, index=True)
     ongoing = Column(Boolean, index=True)

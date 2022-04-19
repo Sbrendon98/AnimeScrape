@@ -46,6 +46,7 @@ itemloaders==1.0.4
 itsdangerous==2.0.1
 Jinja2==3.0.3
 jmespath==0.10.0
+json-lines==0.5.0
 jsonpatch==1.22
 jsonpointer==2.0
 jsonschema==3.2.0
@@ -117,7 +118,7 @@ tqdm==4.62.3
 trio==0.19.0
 trio-websocket==0.9.2
 Twisted==18.9.0
-typing-extensions==4.0.1
+typing_extensions==4.0.1
 ua-parser==0.10.0
 ubuntu-advantage-tools==27.5
 ufw==0.36

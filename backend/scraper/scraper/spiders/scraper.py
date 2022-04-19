@@ -14,7 +14,6 @@ class AnimixSpider(scrapy.Spider):
         res = json.loads(response.text) 
         Items = AnimeItem()
         for id in range(len(res)):
-            # print(res[id])
             Items['title'] = res[id]['title']
             Items['id'] = res[id]['id']
             Items['edition'] = res[id]['e']

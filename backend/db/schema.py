@@ -20,6 +20,7 @@ class Anime(AnimeBase):
 class Anime_List_Base(BaseModel):
     name: str
     isDubbed: bool 
+    edition: str
     
 class Anime_List_Create(Anime_List_Base):
     pass
