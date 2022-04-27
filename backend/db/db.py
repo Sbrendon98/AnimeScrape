@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 #This is how we will be making the connection to the database
-engine = create_engine('postgresql+psycopg2://postgres:admin@localhost:5432/anime_scrape')
+engine = create_engine('postgresql+psycopg2://postgres:admin@localhost:5432/anime_spider', pool_pre_ping=True)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine )
 #declarative base makes a connection to our db models
