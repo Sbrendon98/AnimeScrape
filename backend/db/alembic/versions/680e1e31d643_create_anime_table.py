@@ -28,20 +28,18 @@ depends_on = None
 # command.stamp(alembic_cfg, "head")
 
 def upgrade():
-    
-   
-    
-    anime_list = op.create_table(
+    op.create_table(
         'anime_list',
         sa.Column('id', sa.Integer, primary_key=True),
-        sa.Column('name', sa.String, unique=True, nullable=False),
+        sa.Column('title', sa.String, unique=True, nullable=False),
+        sa.Column("code", sa.String, unique=True, nullable=False),
         sa.Column('edition', sa.Integer, index=True),
         sa.Column('isDubbed', sa.Boolean, default=False)
         )
     op.create_table(
         'anime',
         sa.Column('id', sa.Integer, primary_key=True, index=True),
-        sa.Column('name', sa.String, index=True),
+        sa.Column('title', sa.String, index=True),
         sa.Column('episodes', sa.Integer, index=True),
         sa.Column('upcoming', sa.String, index=True),
         sa.Column('ongoing', sa.Boolean, index=True),
@@ -55,7 +53,7 @@ def upgrade():
     # )
     
     
-    op.bulk_insert(anime_list, animelist.animeFile())
+    #op.bulk_insert(anime_list, animelist.animeFile())
 
 def downgrade():
     op.drop_table('anime_list')

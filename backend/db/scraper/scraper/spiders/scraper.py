@@ -15,7 +15,7 @@ class AnimixSpider(scrapy.Spider):
         Items = AnimeItem()
         for id in range(len(res)):
             Items['title'] = res[id]['title']
-            Items['id'] = res[id]['id']
+            Items['code'] = res[id]['id']
             Items['edition'] = res[id]['e']
             yield Items
             
