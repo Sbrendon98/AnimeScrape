@@ -5,15 +5,12 @@ Revises:
 Create Date: 2022-04-18 23:28:17.715184
 
 """
-import os
 import sqlalchemy as sa 
-# from email.policy import default
-# from xmlrpc.client import Boolean
-# from alembic.config import Config
+from alembic.config import Config
 from alembic import op, command
-# from sqlalchemy import MetaData
-from scraper import animelist
-# from db import engine
+from sqlalchemy import MetaData
+
+from db import engine
 
 
 # revision identifiers, used by Alembic.
@@ -24,15 +21,15 @@ depends_on = None
 
 # meta = MetaData(bind=op.get_bind())
 # meta.create_all(engine)
-# alembic_cfg = Config("./alembic.ini")
+# alembic_cfg = Config("alembic.ini")
 # command.stamp(alembic_cfg, "head")
 
 def upgrade():
     op.create_table(
         'anime_list',
         sa.Column('id', sa.Integer, primary_key=True),
-        sa.Column('title', sa.String, unique=True, nullable=False),
-        sa.Column("code", sa.String, unique=True, nullable=False),
+        sa.Column('title', sa.String,  nullable=False),
+        sa.Column("code", sa.String,  nullable=False),
         sa.Column('edition', sa.Integer, index=True),
         sa.Column('isDubbed', sa.Boolean, default=False)
         )

@@ -4,15 +4,15 @@ A web scraping program designed to scrape information on your favorite anime and
 
 **Language:** Python, JavaScript, SQL
 
-**Tools:** React Native, SQLALchemny, FastAPI, PostgreSQL, Scrapy
+**Tools:** React Native, SQLALchemy, FastAPI, PostgreSQL, Scrapy
 
 ## | Backend Road Map
 | Tasks                                     	| Completion 	|
 |-------------------------------------------	|------------	|
 | Scrape Animixplay's list of shows         	| 100%       	|
 | Set up Postgres database                  	| 100%       	|
-| Create models and schema with SQLAlchemny 	| 100%       	|
-| Store scraped data into database          	| 60%        	|
+| Create models and schema with SQLAlchemy 	| 100%       	|
+| Store scraped data into database          	| 100%        	|
 | Set up CRUD models                        	| 0%         	|
 |                                           	|            	|
 |                                           	|            	|

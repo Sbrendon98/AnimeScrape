@@ -1,1 +1,1 @@
-from .animelist import animeFile
+from ..animelist import animeFile

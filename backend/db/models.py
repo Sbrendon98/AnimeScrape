@@ -1,8 +1,7 @@
 from operator import index
-from turtle import title
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-from .db import Base
+from db import Base
 
 #This is how we will be making our models.
 #We define it as a class and make vairables with a Column function to categories each column in our database
@@ -11,8 +10,8 @@ class Anime_List(Base):
     __tablename__= "anime_list"
     
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, unique=True, index=True, nullable=False)
-    code = Column(String, unique=True, index=True, nullable=False)
+    title = Column(String, index=True, nullable=False)
+    code = Column(String, index=True, nullable=False)
     edition = Column(Integer, index=True)
 #nullable is to make sure that the data being passed to the name Column cannot be null
     isDubbed = Column(Boolean, default=False)
