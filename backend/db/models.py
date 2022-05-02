@@ -15,8 +15,10 @@ class Anime_List(Base):
     edition = Column(Integer, index=True)
 #nullable is to make sure that the data being passed to the name Column cannot be null
     isDubbed = Column(Boolean, default=False)
-    
     anime = relationship("Anime", back_populates="anime_list")
+    
+    def __repr__(self):
+        return f"id={self.id},title={self.title},edition={self.edition},isDubbed={self.isDubbed}"
 
 class Anime(Base):
     __tablename__="anime"
@@ -28,4 +30,5 @@ class Anime(Base):
     title_id = Column(Integer, ForeignKey("anime_list.id"))
     
     anime_list = relationship("Anime_List", back_populates="anime")
-    
+    def __repr__(self):
+        return f"id={self.id},title={self.title},episodes={self.episodes},upcoming={self.upcoming},ongoing={self.ongoing}"

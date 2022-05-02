@@ -11,10 +11,10 @@ A web scraping program designed to scrape information on your favorite anime and
 |-------------------------------------------	|------------	|
 | Scrape Animixplay's list of shows         	| 100%       	|
 | Set up Postgres database                  	| 100%       	|
-| Create models and schema with SQLAlchemy 	| 100%       	|
+| Create models and schema with SQLAlchemy 	    | 100%       	|
 | Store scraped data into database          	| 100%        	|
 | Set up CRUD models                        	| 0%         	|
-|                                           	|            	|
+| Set up backend routes with FastAPI            | 0%           	|
 |                                           	|            	|
 |                                           	|            	|
 
@@ -25,3 +25,4 @@ TBA
 ## | Milestones
 
 ### *+Set up databases with SQLAlchemny and Alembic* 
+### *+Stored List of anime into database and sorted between subbed and dubbed* 
