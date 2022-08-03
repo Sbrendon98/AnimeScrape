@@ -17,7 +17,14 @@ def create(anime: schema.Anime_List_Base, db: Session = Depends(db.get_db)):
         "success": True,
         "created_id": creating.id
     }
+#@app.get("/")
+#async def get(id: int, db: Session = Depends(db.get_db)):
+    #return db.query(models.Anime_List)
+
 @app.get("/")
-async def get(id: int, db: Session = Depends(db.get_db)):
-    return db.query(models.Anime_List)
-    
+async def root():
+    return {"message": "Hello World"}
+
+@app.get("/allAnime")
+async def get_all_anime(allAnime):
+    return 
