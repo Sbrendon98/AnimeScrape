@@ -27,7 +27,19 @@ class Anime_List_Create(Anime_List_Base):
 
 class Anime_List(Anime_List_Base):
     id: int
-    
+
+class Anime_Favorites(BaseModel):
+    name: str
+    isFavorite: bool
+    ongoing: bool
+    upcoming: str
+
+class Anime_Favorites_Create(Anime_Favorites):
+    pass
+
+class Anime_Favorites:
+    id: int
+
     class Config:
         orm_mode = True
     

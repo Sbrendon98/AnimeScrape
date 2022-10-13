@@ -1,7 +1,7 @@
 from operator import index
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-from db.db import Base
+from db import Base
 
 #This is how we will be making our models.
 #We define it as a class and make vairables with a Column function to categories each column in our database
@@ -32,3 +32,11 @@ class Anime(Base):
     anime_list = relationship("Anime_List", back_populates="anime")
     def __repr__(self):
         return f"id={self.id},title={self.title},episodes={self.episodes},upcoming={self.upcoming},ongoing={self.ongoing}"
+
+class AnimeFavorties(Base):
+    __tablename__="favorites"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, index=True)
+    isFavorites = Column(Boolean, index=True)
+    ongoing = Column(Boolean, index=True)
+    upcoming = Column(String, index=True)

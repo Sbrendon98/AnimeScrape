@@ -1,3 +1,4 @@
+import os
 import json
 from db import SessionLocal
 import models
@@ -5,8 +6,8 @@ import re
 
 local_session=SessionLocal()
 
-file = r"/mnt/c/Users/Ashton/Senior Phase Project/AnimeSpider/backend/db/scraper/animelist.json"
-
+dirname = os.path.dirname(__file__)
+file = os.path.join(dirname, "scraper/animelist.json")
 def animeFile():
     list = open(file,"r")
     anime = json.load(list)
@@ -22,3 +23,5 @@ for anime in animeFile():
         )
     local_session.add(new_anime)
     local_session.commit()
+
+    animeFile()

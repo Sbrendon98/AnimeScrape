@@ -10,7 +10,7 @@ from alembic.config import Config
 from alembic import op, command
 from sqlalchemy import MetaData
 
-from db import engine
+from db import engine, Base
 
 
 # revision identifiers, used by Alembic.
@@ -42,15 +42,20 @@ def upgrade():
         sa.Column('ongoing', sa.Boolean, index=True),
         sa.Column('title_id', sa.Integer, index=True)
     )
+    op.create_table(
+        'favorites',
+        sa.Column('id', sa.Integer, primary_key=True, index=True),
+        sa.Column('title', sa.String, index=True),
+        sa.Column('isFavorite', sa.Boolean, index=True),
+        sa.Column('upcoming', sa.String, index=True)
+    )
     # op.create_primary_key(
     #     'primary_key', 'anime_list',['id']
     # )
     # op.create_foreign_key(
     #     'foreign_key','anime_list','anime',["id"],["title_id"]
     # )
-    
-    
-    #op.bulk_insert(anime_list, animelist.animeFile())
+
 
 def downgrade():
     op.drop_table('anime_list')

@@ -11,3 +11,9 @@ class AnimeItem(scrapy.Item):
     code = scrapy.Field()
     edition = scrapy.Field()
     pass
+
+class SingleAnime(scrapy.Item):
+    title = scrapy.Field()
+    episodes = scrapy.Field()
+    upcoming = scrapy.Field()
+    ongoing = scrapy.Field()
