@@ -1,7 +1,7 @@
 from operator import index
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-from db import Base
+from db.db import Base
 
 #This is how we will be making our models.
 #We define it as a class and make vairables with a Column function to categories each column in our database

@@ -1,7 +1,8 @@
 from pydantic import BaseModel
 
+#Single Anime----------------------->
 class AnimeBase(BaseModel):
-    name: str
+    title: str
     episodes: int
     upcoming: str
     ongoing: bool
@@ -15,10 +16,11 @@ class Anime(AnimeBase):
     
     class Config:
         orm_mode = True
+#Single Anime---------------------->
 
-
+#All Anime---------------------------->
 class Anime_List_Base(BaseModel):
-    name: str
+    title: str
     isDubbed: bool 
     edition: str
     
@@ -28,8 +30,14 @@ class Anime_List_Create(Anime_List_Base):
 class Anime_List(Anime_List_Base):
     id: int
 
+    class Config:
+        orm_mode=True
+#All Anime--------------------------->
+
+
+#Favorites---------------------------->
 class Anime_Favorites(BaseModel):
-    name: str
+    title: str
     isFavorite: bool
     ongoing: bool
     upcoming: str
@@ -37,9 +45,9 @@ class Anime_Favorites(BaseModel):
 class Anime_Favorites_Create(Anime_Favorites):
     pass
 
-class Anime_Favorites:
+class Anime_Favorites(Anime_Favorites):
     id: int
 
     class Config:
         orm_mode = True
-    
+#Favorites--------------------------->
