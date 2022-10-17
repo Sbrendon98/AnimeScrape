@@ -1,8 +1,9 @@
 import os
 import json
-from db import SessionLocal
-import models
+from db.db import SessionLocal
+import db.models
 import re
+
 
 local_session=SessionLocal()
 
@@ -15,7 +16,7 @@ def animeFile():
 
 for anime in animeFile():
     dub = re.search("(Dub)", anime["title"])
-    new_anime = models.Anime_List(
+    new_anime = db.models.Anime_List(
         title=anime["title"],
         code=anime["code"],
         edition=anime["edition"],

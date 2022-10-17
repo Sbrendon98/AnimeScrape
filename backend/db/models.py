@@ -5,7 +5,8 @@ from db.db import Base
 
 #This is how we will be making our models.
 #We define it as a class and make vairables with a Column function to categories each column in our database
-
+#class IterateAnimeList(type):
+    
 class Anime_List(Base):
     __tablename__= "anime_list"
     
@@ -18,8 +19,9 @@ class Anime_List(Base):
     anime = relationship("Anime", back_populates="anime_list")
     
     def __repr__(self):
-        return f"id={self.id},title={self.title},edition={self.edition},isDubbed={self.isDubbed}"
-
+        return f"id={self.id},title={self.title},code={self.code}, edition={self.edition},isDubbed={self.isDubbed}"
+    
+        
 class Anime(Base):
     __tablename__="anime"
     id = Column(Integer, primary_key=True, index=True)
@@ -40,3 +42,7 @@ class AnimeFavorties(Base):
     isFavorites = Column(Boolean, index=True)
     ongoing = Column(Boolean, index=True)
     upcoming = Column(String, index=True)
+    
+    def __repr__(self):
+        return f"id={self.id},title={self.title},isFavorites={self.isFavorites},ongoing={self.ongoing},upcoming={self.upcoming}"
+    

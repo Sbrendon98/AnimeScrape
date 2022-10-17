@@ -1,7 +1,9 @@
 import scrapy 
 import json
+import request
 from scraper.items import AnimeItem
 
+anime_list = request.get()
 class AnimixSpider(scrapy.Spider):
     name = "animix"
     
